@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bkqmaktk6gaec"]
+
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_5oosl"]
+[ext_resource type="Texture2D" uid="uid://buxdf3v7uv4g" path="res://piedrilla.jpg" id="2_wc7w6"]
+
+[resource]
+script = ExtResource("1_5oosl")
+title = "Piedrilla"
+texture = ExtResource("2_wc7w6")
+health = 20.0
+damage = 5.0

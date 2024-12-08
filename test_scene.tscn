@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://umcs26pt8tv5"]
+
+[ext_resource type="PackedScene" uid="uid://c8wmvj0o1odct" path="res://player.tscn" id="1_2dplj"]
+[ext_resource type="PackedScene" uid="uid://dltiw1727dkff" path="res://spawner.tscn" id="2_88uxj"]
+[ext_resource type="Script" path="res://EnemyType.gd" id="3_wq2uq"]
+[ext_resource type="Resource" uid="uid://bkqmaktk6gaec" path="res://Resources/Piedrilla.tres" id="4_rfi36"]
+[ext_resource type="Texture2D" uid="uid://ce2tsmmu5w0is" path="res://Tiles.jpg" id="5_cbbc8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic0tf"]
+texture = ExtResource("5_cbbc8")
+9:3/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+10:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_67ml2"]
+sources/2 = SubResource("TileSetAtlasSource_ic0tf")
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2dplj")]
+position = Vector2(417, 267)
+
+[node name="Spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_88uxj")]
+player = NodePath("../Player")
+enemy_types = Array[ExtResource("3_wq2uq")]([ExtResource("4_rfi36")])
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D"]
+tile_set = SubResource("TileSet_67ml2")
