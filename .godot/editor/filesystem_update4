@@ -1,8 +1,6 @@
 res://test_scene.tscn
+res://EnemyType.gd
 res://player.gd
-res://enemy.gd
 res://player.tscn
 res://enemy.tscn
 res://spawner.tscn
-res://Resources/Piedrilla.tres
-res://spawner.gd

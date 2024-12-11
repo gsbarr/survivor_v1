@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8wmvj0o1odct"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ern5e"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rau0i"]
-size = Vector2(20, 20)
+[ext_resource type="Texture2D" uid="uid://bl3u3t82mr8pu" path="res://icon.svg" id="2_tbf3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtpvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1ldr"]
+size = Vector2(30, 31)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ern5e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_rau0i")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_tbf3s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rtpvy")
@@ -24,6 +24,7 @@ collision_mask = 2
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="SelfDamage"]
 unique_name_in_owner = true
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_s1ldr")
 
 [node name="Health" type="ProgressBar" parent="."]
